@@ -17,6 +17,7 @@ end
 function love.update()
 player_move()
 map_collide()
+ball_move()
 end
 
 
