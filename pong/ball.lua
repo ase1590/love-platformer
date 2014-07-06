@@ -10,7 +10,7 @@ function ball_draw()
 	love.graphics.rectangle("fill", ball.x, ball.y, 14, 14)
 	end
 
-
+--ball move
 function ball_move()
 	if ball.x > 0 and ball.x < 700 - 14 then
 		ball.x = ball.x + ball.vx
