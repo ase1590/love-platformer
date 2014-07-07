@@ -8,6 +8,10 @@ function love.load()
 	small = love.graphics.newFont(25)
 	medium = love.graphics.newFont(45)
 	large = love.graphics.newFont(72)
+	
+	--add music
+	boop = love.audio.newSource("boop.wav")
+	love.audio.setVolume(0.2)
 
 
 end
