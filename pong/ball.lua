@@ -1,8 +1,8 @@
 ball = {}
 ball.x = 350
-ball.y = 350
-ball.vy = 0
-ball.vx = -2
+ball.y = 30
+ball.vy = 1
+ball.vx = -4
 
 
 function ball_draw()
@@ -25,13 +25,22 @@ function ball_move()
 		ball.vy = - ball.vy
 	end
 	--switch the direction of the ball if it makes screen edge contact
-	if ball.x <=5 or ball.x >= 698-14 then
+	if ball.x >= 696-14 then
 		ball.vx = - ball.vx
 	end
-
+	--if the ball is on the same X axis as the player, and is between two Y ranges, bounce
 	if ball.x == player.x + player.scale_x 
 	and ball.y + 14 >= player.y 
 	and ball.y <= player.y + player.scale_y then
 		ball.vx = - ball.vx
+	end
+--if the ball hits the player edge, respawn in 1 second in the center
+	if ball.x <=20 then
+		love.timer.sleep(1)
+		ball.x = 350 
+		ball.y = 30
+		player.x = 20
+		player.y = 20
+		player.score = player.score - 1
 	end
 end
