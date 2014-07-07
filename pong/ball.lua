@@ -1,7 +1,7 @@
 ball = {}
 ball.x = 350
 ball.y = 350
-ball.vy = 3
+ball.vy = 0
 ball.vx = -2
 
 
@@ -28,8 +28,10 @@ function ball_move()
 	if ball.x <=5 or ball.x >= 698-14 then
 		ball.vx = - ball.vx
 	end
---this code doesnt work
-	--if ball.x + ball.y <= player.x + player.y then
-		--ball.vx = - ball.vx
-	--end
+
+	if ball.x == player.x + player.scale_x 
+	and ball.y + 14 >= player.y 
+	and ball.y <= player.y + player.scale_y then
+		ball.vx = - ball.vx
+	end
 end
