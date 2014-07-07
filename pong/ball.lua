@@ -28,4 +28,8 @@ function ball_move()
 	if ball.x <=5 or ball.x >= 698-14 then
 		ball.vx = - ball.vx
 	end
+
+	if ball.x <= player.x + player.scale_x then
+		ball.vx = - ball.vx
+	end
 end
