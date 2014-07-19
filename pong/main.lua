@@ -1,10 +1,12 @@
 require "player"
 require "map"
 require "ball"
+require "toggletext"
 
 function love.load()
 
 -- set up some fonts
+	smaller = love.graphics.newFont(12)
 	small = love.graphics.newFont(25)
 	medium = love.graphics.newFont(45)
 	large = love.graphics.newFont(72)
@@ -33,4 +35,6 @@ function love.draw()
 	love.graphics.setColor(255,255,255, 200)
 	love.graphics.print("PONG", 300, 10)
 	love.graphics.print(player.score, 200, 10)
+-- debug showlist, removeme after feature complete
+	showlist()
 end
