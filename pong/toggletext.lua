@@ -22,16 +22,6 @@ function love.keypressed(key)
 end
 
 
-
-function toggletext()
-	if showtext == true then
-		love.graphics.print(counter, 300, 100)
-	elseif showtext == false then
-		love.graphics.print("", 300, 100)
-	end
-end
-
-
 function showlist()
 	if showtext == true then
 		love.graphics.setFont(smaller)
