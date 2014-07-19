@@ -37,6 +37,8 @@ function showlist()
 		love.graphics.setFont(smaller)
 		love.graphics.print("ball vy: " .. ball.vy, 150, 150)
 		love.graphics.print("ball vx: " .. ball.vx, 150, 175)
+		love.graphics.print("ball x: " .. ball.x, 150, 200)
+		love.graphics.print("ball y: " .. ball.y, 150, 225)
 	elseif showtext == false then 
 		love.graphics.print("", 150, 175)
 	end
