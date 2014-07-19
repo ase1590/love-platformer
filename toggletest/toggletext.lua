@@ -10,6 +10,7 @@ then enjoy
 --]]
 
 togglekey = 'a'
+showtext = false
 
 function love.keypressed(key)
    if key == togglekey and showtext == false then

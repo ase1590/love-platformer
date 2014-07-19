@@ -3,7 +3,7 @@
 
 function love.load()
 	counter = 2
-	showtext = false
+	
 -- set up some fonts
 	small = love.graphics.newFont(25)
 	medium = love.graphics.newFont(45)
