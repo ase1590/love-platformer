@@ -13,12 +13,12 @@ togglekey = 'w'
 showtext = false
 
 function love.keypressed(key)
-   if key == togglekey and showtext == false then
-      showtext = true
-    elseif key == togglekey and showtext == true then
-        showtext = false
+	if key == togglekey and showtext == false then
+		showtext = true
+	elseif key == togglekey and showtext == true then
+		showtext = false
 		
-   end
+	end
 end
 
 

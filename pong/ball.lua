@@ -27,25 +27,25 @@ function ball_move()
 	end
 	--if the ball hits any Y boundaries, reverse direction
 	if ball.y <= 2 then
-        ball.y = 3
+		ball.y = 3
 		ball.vy = love.math.random( 1, 3 )                    --ball.vy
 		love.audio.play(boop)
 	end 
-    --part 2 of Y axis error checking
-    if ball.y >=698 - 14 then
-        ball.y = 697-14
-        ball.vy = - love.math.random( 1, 3 )
-        love.audio.play(boop)
-    end
+	--part 2 of Y axis error checking
+	if ball.y >=698 - 14 then
+		ball.y = 697-14
+		ball.vy = - love.math.random( 1, 3 )
+		love.audio.play(boop)
+	end
 	--switch the X direction of the ball if it makes screen edge contact
 	if ball.x >= 696-14 then
-        ball.x = 696-13
+		ball.x = 696-13
 		ball.vx = - love.math.random( 2, 8 )           --ball.vx
 		ball.vy = love.math.random( -3, 3 )
-            if ball.vy == 0 then
-                ball.vy = - love.math.random( -3, 3 )
-            end
-        love.audio.play(boop)
+			if ball.vy == 0 then
+				ball.vy = - love.math.random( -3, 3 )
+			end
+		love.audio.play(boop)
 	end
 	--if the ball is on the same X axis as the player, and is between two Y ranges, bounce
 	if ball.x <= player.x + player.scale_x 
@@ -58,9 +58,9 @@ function ball_move()
 	if ball.x <= 20 then
 		love.timer.sleep(2)
 		ball.x = 350 
-        ball.vx = -1
+		ball.vx = -1
 		ball.y = 30
-        ball.vy = 1
+		ball.vy = 1
 		player.x = 20
 		player.y = 20
 		player.score = player.score - 1
