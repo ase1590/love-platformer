@@ -56,9 +56,9 @@ function ball_move()
 	end
 --if the ball hits the player edge, respawn in 1 second in the center
 	if ball.x <= 20 then
-		love.timer.sleep(2)
+		love.timer.sleep(1)
 		ball.x = 350 
-		ball.vx = -1
+		ball.vx = -2
 		ball.y = 30
 		ball.vy = 1
 		player.x = 20

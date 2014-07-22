@@ -1,8 +1,8 @@
 love-platformer
 ===============
 
-Platformer made in love2d
+Pong made in Love2d
 
-Right now, that's a Lie, and I'm building Pong!
+I'm building Pong!
 
 Want to try it? click the Ghetto Pong.zip,click view raw, then download, extract and enjoy!
