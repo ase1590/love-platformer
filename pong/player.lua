@@ -7,7 +7,7 @@ player.x = 20
 player.y = 20
 player.scale_x = 10
 player.scale_y = 50
-player.speed = 4
+player.speed = 6
 player.score = 0
 
 function player_draw()
