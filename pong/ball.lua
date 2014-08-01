@@ -40,7 +40,7 @@ function ball_move()
 	--switch the X direction of the ball if it makes screen edge contact
 	if ball.x >= 696-14 then
 		ball.x = 696-13
-		ball.vx = - love.math.random( 2, 8 )           --ball.vx
+		ball.vx = -ball.vx -1             --ball.vx add error check for max velocity
 		ball.vy = love.math.random( -3, 3 )
 			if ball.vy == 0 then
 				ball.vy = - love.math.random( -3, 3 )
@@ -48,12 +48,12 @@ function ball_move()
 		love.audio.play(boop)
 	end
 	--if the ball is on the same X axis as the player, and is between two Y ranges, bounce
-	--error here, if ball becomes stuck behind paddle, lel bounce
+	--also errorcheck to teleport ball in front of paddle if stuck.
 	if ball.x <= player.x + player.scale_x 
 	and ball.y + 14 >= player.y 
 	and ball.y <= player.y + player.scale_y then
 		ball.x =player.x + player.scale_x + 1
-		ball.vx = - ball.vx
+		ball.vx = - ball.vx +1 --add error checking for velocity
 		love.audio.play(boop)
 	end
 --if the ball hits the player edge, respawn in 1 second in the center
