@@ -54,6 +54,9 @@ function ball_move()
 	and ball.y <= player.y + player.scale_y then
 		ball.x =player.x + player.scale_x + 1
 		ball.vx = - ball.vx +1 --add error checking for velocity
+		if ball.vx >= 9 then 
+			ball.vx = love.math.random(2,5)
+		end
 		love.audio.play(boop)
 	end
 --if the ball hits the player edge, respawn in 1 second in the center
