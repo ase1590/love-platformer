@@ -2,6 +2,7 @@ require "player"
 require "map"
 require "ball"
 require "toggletext"
+require "ai"
 
 function love.load()
 
@@ -23,13 +24,16 @@ end
 function love.update()
 player_move()
 map_collide()
+ai_collide()
 ball_move()
+ai_move()
 end
 
 
 
 function love.draw()
 	player_draw()
+	ai_draw()
 	ball_draw()
 	love.graphics.setFont(small)
 	love.graphics.setColor(255,255,255, 200)

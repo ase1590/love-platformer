@@ -20,3 +20,14 @@ function ball_collide()
 
 
 end
+
+function ai_collide()
+	if ai.y > 700 - 60 then
+		ai.y = 700 -60
+	end
+	if ai.y < 10 then
+		ai.y = 10
+	end
+
+
+end
