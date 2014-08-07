@@ -1,4 +1,4 @@
--- set up the ai 
+-- Set up the ai 
 
 -- according to IRC ai = { x = 1, y = 2, scale = { x = 3, y = 4 } } -- ai.scale.y
 
