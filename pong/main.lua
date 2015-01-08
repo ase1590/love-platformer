@@ -1,3 +1,4 @@
+require "timer"
 require "player"
 require "map"
 require "ball"
