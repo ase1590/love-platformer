@@ -29,25 +29,32 @@ function ball_move()
 	if ball.y <= 2 then
 		ball.y = 3
 		ball.vy = love.math.random( 1, 3 )                    --ball.vy
-		love.audio.play(boop)
+		love.audio.play(boop) 
 	end 
-	--part 2 of Y axis error checking
-	if ball.y >=698 - 14 then
-		ball.y = 697-14
-		ball.vy = - love.math.random( 1, 3 )
-		love.audio.play(boop)
+		--part 2 of Y axis error checking 
+	if ball.y >=698 - 14 
+	then ball.y = 697-14 ball.vy = - love.math.random( 1, 3 ) 
+		love.audio.play(boop) 
 	end
 	--switch the X direction of the ball if it makes screen edge contact
 	if ball.x >= 696-14 then
 		ball.x = 696-13
 		ball.vx = -ball.vx -1             --ball.vx add error check for max velocity
 		ball.vy = love.math.random( -3, 3 )
-			if ball.vy == 0 then
+	if ball.vy == 0 then
 				ball.vy = - love.math.random( -3, 3 )
-			end
+	end
 		love.audio.play(boop)
 	end
-
+-- check to see if ball hits ai, then bounce if it does, and move 1 pixel in front to errorcheck
+	if ball.x + 14  >= ai.x
+		and ball.y + 14 >= ai.y
+		and ball.y <= ai.y + ai.scale_y
+		then ball.x = ai.x - 15
+		ball.vx = - ball.vx
+		ball.vy = love.math.random( 1, 3 )
+		love.audio.play(boop)
+	end
 
 --Define player & ball interaction
 
