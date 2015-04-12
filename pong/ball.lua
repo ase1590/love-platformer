@@ -47,6 +47,10 @@ function ball_move()
 			end
 		love.audio.play(boop)
 	end
+
+
+--Define player & ball interaction
+
 	--if the ball is on the same X axis as the player, and is between two Y ranges, bounce
 	--also errorcheck to teleport ball in front of paddle if stuck.
 	if ball.x <= player.x + player.scale_x 
