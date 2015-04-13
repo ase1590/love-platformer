@@ -40,6 +40,7 @@ function love.draw()
 	love.graphics.setColor(255,255,255, 200)
 	love.graphics.print("PONG", 300, 10)
 	love.graphics.print(player.score, 200, 10)
+	love.graphics.print(ai.score, 450,10)
 -- debug showlist, removeme after feature complete
 	showlist()
 end

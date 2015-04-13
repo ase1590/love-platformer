@@ -1,6 +1,8 @@
 ball = {}
 ball.x = 350
 ball.y = 30
+-- rf= random factor, which is used to describe how much the ball vy randoms
+rf = 4
 
 
 --ball.vy = 1
@@ -40,9 +42,9 @@ function ball_move()
 	if ball.x >= 696-14 then
 		ball.x = 696-13
 		ball.vx = -ball.vx -1             --ball.vx add error check for max velocity
-		ball.vy = love.math.random( -3, 3 )
+		ball.vy = love.math.random( -rf, rf )
 	if ball.vy == 0 then
-				ball.vy = - love.math.random( -3, 3 )
+				ball.vy = - love.math.random( -rf, rf )
 	end
 		love.audio.play(boop)
 	end
@@ -52,7 +54,7 @@ function ball_move()
 		and ball.y <= ai.y + ai.scale_y
 		then ball.x = ai.x - 15
 		ball.vx = - ball.vx
-		ball.vy = love.math.random( 1, 3 )
+		ball.vy = love.math.random( -rf, rf )
 		love.audio.play(boop)
 	end
 
@@ -65,6 +67,7 @@ function ball_move()
 	and ball.y <= player.y + player.scale_y then
 		ball.x =player.x + player.scale_x + 1
 		ball.vx = - ball.vx +1 --add error checking for velocity
+		ball.vy = love.math.random(-rf, rf)
 		if ball.vx >= 9 then 
 			ball.vx = love.math.random(2,5)
 		end
@@ -79,6 +82,6 @@ function ball_move()
 		ball.vy = 1
 		player.x = 20
 		player.y = 20
-		player.score = player.score - 1
+		ai.score = ai.score + 1
 	end
 end
