@@ -30,6 +30,7 @@ function showlist()
 		love.graphics.print("ball x: " .. ball.x, 150, 200)
 		love.graphics.print("ball y: " .. ball.y, 150, 225)
 		love.graphics.print("ball-ai abs " .. math.abs(ball.y - ai.y), 150, 250)
+		love.graphics.print("ai y: " .. ai.y, 150, 275)
 	elseif showtext == false then 
 		love.graphics.print("", 150, 175)
 	end

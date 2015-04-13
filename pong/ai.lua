@@ -17,8 +17,9 @@ function ai_draw()
 end
 
 function ai_move()
-	if ball.y == ai.y or math.abs(ball.y - ai.y) < 25 then
-		ai.y = ai.y - 0
+	if ball.y == ai.y 
+		or math.abs(ball.y - ai.y - 15) < 25
+		then ai.y = ai.y - 0
 	elseif ball.y < ai.y then
 		ai.y = ai.y - ai.speed
 		
