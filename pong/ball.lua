@@ -30,7 +30,7 @@ function ball_move()
 	--if the ball hits any Y boundaries, reverse direction
 	if ball.y <= 2 then
 		ball.y = 3
-		ball.vy = love.math.random( 1, 3 )                    --ball.vy
+		ball.vy = - ball.vy --love.math.random( 1, 3 )                    --ball.vy
 		love.audio.play(boop) 
 	end 
 		--part 2 of Y axis error checking 
@@ -84,4 +84,14 @@ function ball_move()
 		player.y = 20
 		ai.score = ai.score + 1
 	end
+-- if the ball hits the ai edge, respawn in 1 second in the center
+	if ball.x >= 680 then
+		love.timer.sleep(1)
+		ball.x = 250
+		ball.vx = 2
+		ball.y = 30
+		ball.vy = 1
+		player.score = player.score + 1
+	end
+
 end
